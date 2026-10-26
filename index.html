@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wrong Answers Only — Pop for Bad Advice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #e7eef0;
+    --nav: #bdd8e9;
+    --deepest: #2f5972;
+    --deepest-shadow: #22415a;
+    --ink: #1f3140;
+    --ink-soft: #45606f;
+    --card: #eaf4f9;
+    --card-line: #c7e0ec;
+    --focus: #2f5972;
+    --bubble-hi: rgba(255,255,255,0.95);
+    --bubble-mid: rgba(255,255,255,0.28);
+    --prepop-bubble: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIGNsaXAtcnVsZT0iZXZlbm9kZCIgdmlld0JveD0iMCAwIDYwIDYwIj4KICA8ZGVmcy8+CiAgPGNsaXBQYXRoIGlkPSJhIj4KICAgIDxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjMwIi8+CiAgPC9jbGlwUGF0aD4KICA8ZyBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii41IiBjbGlwLXBhdGg9InVybCgjYSkiPgogICAgPHBhdGggZD0iTTQ3LjYgMzUuNWEzMSAzMSAwIDAxNS05YzQuNy03LjMgNS44IDExLjMgMyAxNi40LTMgNS4xLTcgMTMuMy0xOC41IDEyLjgtMTEuNS0uNC0xMS0zLjMtNi0yLjcgNS4yLjYgNi4yLTIgNi0zLjgtLjEtMS44IDEwLTEwLjYgMTAuNS0xMy43ek0xOS4xIDkuMWMtMSAuMS0yLjIuNS0zLjMgMS4xLTYuOCAzLjYtOC4zIDguNi04LjQgMTEuNiAwIC42IDAgMS4yLjIgMS44LTMuNiA3LjQtNC4zIDE2LjYgNi45IDIxbDEuMi40IDIuMi44aC0uMUMyMiA0Ny40IDI5IDUwIDMxLjUgNDdjMS44LTIgMy4zLTQuNSA0LjctNyAyLjItMy42IDQuMy03LjMgNy43LTkuNy43LS41IDEuNC0xIDItMS44LjMtLjQgMS4yLS44IDMuMSAwIDIuNCAxIDMuNy0xNy44LTEzLjEtMjAuNi0xMC4yLTEuNy0xNC0xLTE2LjggMS4yek04LjQgMjUuM2MtLjIuNi0uMyAxLjMgMCAybC4zLjZjLjkgMi4xIDEuNiAzLjguMiA1bC0uMi4yYy0xLjYgMS4zLTQuMiAzLjUgOC41IDExLjJsMS41LjdjMyAxLjMgOS4zIDQgMTEgMSAxLjMtMi40IDAtMy42LTEuNi01LjItMS45LTEuOC00LjMtNC00LjMtOC45IDAtNS45IDEuNS00LjggMy4zLTMuNCAxIC43IDIuMiAxLjYgMy4yIDEuMyAxLjQtLjQgMS4yLTIgMS0zLjYtLjItMS44LS40LTMuNiAxLjMtNC4xIDItLjYgMy44LjcgNS41IDIgMS4yLjggMi4yIDEuNSAzIDEuMyAxLS4yIDEuNC0uOCAxLjctMS4yLjMtLjQuNS0uNyAxLjEtLjUuNi4xIDEgLjkgMS42IDEuNi44IDEuMSAxLjcgMi4zIDIuNiAxLjUgMS40LTEuNC4zLTE1LTExLjEtMTgtNi41LTEuNy05LjYgMS4xLTExLjYgNC40LjIuNy4zIDEuNi4yIDIuNSAwIDEuNS0uNCAyLjgtMS40IDMuOC0zLjYgMy42LTYuOCA3LjctMTEuMSA3LjctMi4zIDAtMy44LS43LTQuNy0xLjl6Ii8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xNSAxMy40YTE4IDE4IDAgMDE2LjQtNmM0LjcuNSAxLjUgMTAuMS0uNSAxMy40LTIuNiA0LjMtMTEgNS43LTExLjMuOC0uMi00LjkgMy42LTQuNiA1LjQtOC4yem0zOC4zIDMwbC44LTEuN2MyLTUtNy44LTQtOCAxLjQtLjMgNC42IDQuOCA0LjMgNy4yLjN6Ii8+CiAgPC9nPgo8L3N2Zz4=");
+    --popped-bubble: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIGNsaXAtcnVsZT0iZXZlbm9kZCIgdmlld0JveD0iMCAwIDYwIDYwIj4KICA8ZGVmcy8+CiAgPGNsaXBQYXRoIGlkPSJhIj4KICAgIDxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjMwIi8+CiAgPC9jbGlwUGF0aD4KICA8ZyBmaWxsPSIjZmZmIiBjbGlwLXBhdGg9InVybCgjYSkiPgogICAgPHBhdGggZmlsbC1vcGFjaXR5PSIuNSIgZD0iTTEzLjcgNDVjLTItLjYtMy42LTIuMy00LTQuNC0uMi0xIDEuNi0xLjMgMi41LS43LjUuNCAxIC41IDEuNy41IDEuMy0uMiAzLjEtMS45IDUuMi0zLjggMi44LTIuNiA2LjEtNS42IDktNS42IDMgMCAzLjggMi4yIDQuNiA0LjQuNiAxLjUgMS4xIDMgMi4zIDMuOSAzIDIuNCAxMSAxMC43IDguNSAxMi45LTIgMS43LTYuOC00LjEtOS4yLTdMMzMgNDMuOGMtLjUtLjUtLjItLjguMS0xIC41LS40LjgtLjctMi0xLjUtMi4zLS42LTIuMi0uNC0yLjEgMCAwIC4zLjEuNi0yLjQgMHMtMS4zLTItLjMtM2MxLTEuMiAxLjgtMi4yLTEtMi4ycy00LjMgMi4yLTUuNyA0LjVDMTguMiA0Mi44IDE2LjggNDUgMTQgNDVoLS4zem0yMy41IDEuOGMuNy43IDEuNSAxLjIgMi40IDEuMiAxLjcgMCAxLTEuNC0uNC0yLjgtMS43LTEuOC0zLjYtLjItMiAxLjZ6bTcuNS0yNC4xYzAtLjMgMC0uNy0uMi0xLS45LTEuOSAwLTQuNiAxLjktMy45IDIuMyAxIDQuNSAyLjYgNiA1LjYgMS41IDMuNC44IDYuNi40IDktLjQgMi0uNyAzLjIuNSAzLjQgMi43LjUgMy42IDQuMSAwIDMuNi0xLjgtLjItMi45IDEuOS00IDQtMSAyLTIuMSA0LjItNCA0LjItMS44IDAtMi0yLTItNC0uMi0yLS4zLTQtMi00LjJoLS41Yy02LjktMi03LjktNS44LTcuOC03LjMgMC0xLjUgMS40LTIuNiAzLjEtMi42LjggMCAxLjMtLjggMS44LTEuNi43LS45IDEuMy0xLjggMi40LTEuOCAyIDAgNC40LS44IDQuNC0zLjR6bTIuNCAxLjJjMC0xLS4yLTItLjYtMi44LS4zLS44LjMtMS45IDEuMS0xLjQgMi41IDEuNyA0IDUuNyA0IDkuNCAwIDQuNy0zLjIgMTUuNS01LjIgMTUuNS0xLjQgMC0xLjUtMi44LTEuNi01IDAtMS4yIDAtMi4xLS4zLTIuNS0uMi0uNC0uNS0uMi0uOSAwLS42LjItMS4yLjUtMS4yLTEuOCAwLTIgMS4yLTQgMi41LTYuMSAxLTIgMi4yLTMuOCAyLjItNS4zek0yOSAzMy4yYy0uNSAwLS45LjgtLjkgMS43IDAgMSAuNSAyLjIgMS41IDMgMy4zIDIuNSAyLjgtMy44LS42LTQuN3ptMTEuOS0zLjljMi41LjQtLjUgNC43LTIuMSAzLjMtMS42LTEuMy0uNS0zLjMgMi0zLjNoLjF6TTI3IDE2LjVjLTIuMi0uNC02LjktLjctNi43IDEgLjMgMi4yIDIgMy44IDMuNSAzLjguOCAwIDEuMy43IDEuOCAxLjQuNi44IDEuMSAxLjYgMiAxLjYuNyAwIDEuNC4yIDIuMS41IDEuMy4zIDIuNi44IDQgLjMuOS0uMyAyLjEtLjIgMy41IDAgMi4yLjIgNC42LjUgNC45LTEuNS40LTIuNC05LjktNS43LTE1LTcuMUgyN3pNMjIuNSAxOGMwIC42LjUgMiAyLjYgMi41IDEuNS41IDEuOSAxIDIuMiAxLjUuMi40LjMuNi44LjcuNSAwIC44LjIgMSAuNC41LjMgMSAuNyAyLjcuN2wyLjgtLjJjMi0uMiAzLjgtLjQgNS41LjIgMi41IDEtLjYtMi44LTYuNi0zLjgtMi41LS40LTQuNy0xLjItNi42LTEuOC0yLjctLjgtNC40LTEuNC00LjQtLjJ6bTctMTBjLjItLjYgMS42LTEuNyA1LTEuNyA0LjMgMCAxMS42IDQuNyAxNC4zIDcuOWE2LjQgNi40IDAgMDAzIDIuMmMuOC40IDEuMy42IDEuMSAyLjEtLjMgMi4zLTIuMy43LTMuMy0uNGE2MyA2MyAwIDAxLTE2LjktNy44QzMxIDkuNiAyOS41IDkgMjkuNSA4em04LjggMy43bDEuMy43YzMuNiAxLjggNS44LS42IDIuMi0yLjRsLTIuMS0uOWMtMy0xLjItNCAxLTEuNCAyLjZ6Ii8+CiAgICA8cGF0aCBmaWxsLW9wYWNpdHk9Ii42IiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0zMy43IDU4LjhsLTUuMi4zYy01IDAtMTUuNy0xLjgtMTguOS04LjctMS4zLTIuOC0yLjUtNC44LTMuNS02LjUtMi4xLTMuNS0zLjYtNS45LTQtMTIuMi0uNS03LjUgMS43LTEwLjUgMy44LTEzLjJsMS41LTIgLjctMS4yYzIuNS00LjEgNy40LTEyLjIgMTMuMS0xMSAyLjguNiAzLjMtLjMgMy43LTEuMS42LTEgMS0yIDUuNSAwLTEuOCAxLjItNSAzLjctNC4zIDUuNi4zIDEuMSAyLjMgMS43IDQuNCAyLjMgMi4zLjYgNC42IDEuMyA0LjYgMi44LjEgMi45LTE2LjEgMS41LTE2LjMtMS4ydi0xLjRjMC0xLjUgMC0xLjgtMS43LTItMiAwLTIuOCAzLjItLjUgNi4zIDEgMS4zIDIuNCAzIDMuOCA0LjQgMS45IDIgMy41IDMuNyAzLjUgNC40IDAgMS0xLjIgMi0xLjcgMi40LS41LS40LTItMS4yLTQuNC0xLjctMS41LS4zLTEuNyAwLTIgLjYtLjMuNS0uNyAxLTIuMyAxLTEuOSAwLTItMS4zLTItMi42IDAtMSAwLTEuOS0xLTItMi0uMi00LjggNC44LTQuOCA5LjVTOC43IDU4IDMwLjkgNThoM2MxLjUtMy42IDIwLjMtNC40IDE5LjItMTMuMkg1M2MtLjQtNCAuMi02LjcgMS4yLTguMy43LTEuNCAyLS41IDEuOCAxLS40IDMuNS4xIDQuNS42IDYgLjMgMS4yIDAgNC43LTUuNCAxMC02LjUgNi4zLTE2LjkgOC45LTE3LjUgNS4zem0tOS40LTRjLTEuNy0uNC0zLjUtMS42LTUtMi44LTEuNi0xLjMtLjctMi44IDEuMy0yLjMgNCAxIDguNyAyLjggOS42IDIuOCAxLjMgMCAzLjMtLjcgMi44IDEuMy0uNSAxLjktNC40IDIuMS04LjcgMXpNMzAuNCA0M2MtLjkgMS41LTEuOSA0LjcgMS4zIDYuMSA0IDEuOC41LTcuMy0xLjMtNlY0M3pNMTUgMzIuOGgtLjFjLTEuMSAwLTEuMy44LTEuMyAxLjIgMCAxLjIgMS4zIDEuNSAyIDEuNi40IDAgMS41IDAgMS41LS45IDAtMS0uOC0xLjktMi4xLTEuOXptLTkuMy04LjZjLS41LjgtMSAxLjYtMSAyLjFsLS40IDIuMmMtLjMgMS43LS44IDQtLjMgNSAuNyAxLjYtNC4zLTYuOSAyLTEyLjEgMS4xLjIuNCAxLjUtLjQgMi44aC4xem00NC44LTEwLjdBMTUgMTUgMCAwMTQ1IDguOGMtMS4zLTIuMyAxLjctNCAzLjgtMi42IDMuNSAyLjQgNS42IDcuMyA3LjEgOSAyLjEgMi40LjcgNi41LjcgOCAwIDEuNi0uNiAxLjUgMCAzLjIuNyAxLjggMS4zIDMuNS0xLTEuMnMzLjgtNi41LTUtMTEuN2gtLjF6TTE0LjcgMThjMCAxLjQuMiA0IDIuMiAzLjIgMi41LS44LS42LTUtMi4xLTMuMmgtLjF6bTYtNmMuNC44IDMuNCAyLjEgNiAyLjEgMi40IDAgMy4xLS43IDMuMS0xLjRzLS42LTEtOS0uN2gtLjF6bTEyLTguNmMwLS41IDEtMS42IDQuNy0xLjUgNC43IDAgNSAxLjggNSAyLjUgMCAuOC0yLjIgMS43LTUuMy40YTQuMiA0LjIgMCAwMC0zLjItLjNjLS44LjEtMS4yLjItMS4yLTF2LS4xem02LjYtLjhjLS41IDAtMS40LjEtMSAuNS41LjUgMiAxLjYgMi4zIDEuMy40LS4zLjgtMS44LTEuMy0xLjh6bS04LjkuNWwuMi0uMXYuMmgtLjJ6Ii8+CiAgPC9nPgo8L3N2Zz4=");
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; height:100%; }
+
+  body{
+    font-family:'Inter', system-ui, sans-serif;
+    color:var(--ink);
+    background: var(--bg);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  button{ font-family:inherit; cursor:pointer; }
+  button:focus-visible, textarea:focus-visible{
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header.site{
+    position: relative;
+    z-index: 40;
+    background: var(--nav);
+    padding: 14px 18px 16px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap: 12px;
+    flex-wrap:wrap;
+  }
+  .brand{ display:flex; flex-direction:column; gap:2px; }
+  .brand h1{
+    font-family:'Permanent Marker', cursive;
+    font-size: clamp(1.5rem, 4.2vw, 2.4rem);
+    color: var(--ink);
+    margin:0;
+    letter-spacing: 0.5px;
+    cursor: default;
+  }
+  .kinetic-letter{
+    display:inline-block;
+    transform-origin: bottom center;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+  }
+  .stamp{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--deepest);
+    border: 2px solid var(--deepest);
+    padding: 2px 8px;
+    border-radius: 3px;
+    transform: rotate(-2deg);
+    width: fit-content;
+    opacity:0.85;
+  }
+  .tagline{
+    font-size:0.85rem;
+    color: var(--ink-soft);
+    margin-top:4px;
+    max-width: 46ch;
+  }
+  .header-right{ display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+  .pop-counter{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    color: var(--deepest);
+    background: var(--card);
+    border:1px solid var(--card-line);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  .ask-btn{
+    background: var(--deepest);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 18px 10px 14px;
+    font-weight:700;
+    font-size: 0.9rem;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    box-shadow: 0 3px 0 var(--deepest-shadow), 0 6px 10px rgba(20,45,65,0.25);
+    transition: transform 0.12s ease;
+  }
+  .ask-btn:hover{ transform: translateY(-1px); }
+  .ask-btn:active{ transform: translateY(1px); box-shadow: 0 1px 0 var(--deepest-shadow); }
+  .ask-btn .plus{ font-size:1.15rem; line-height:1; }
+
+  /* ---------- INTRO STRIP ---------- */
+  .instructions{
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    padding: 10px 12px 6px;
+  }
+  .instructions b{ color: var(--ink); }
+
+  /* ---------- BUBBLE FIELD (honeycomb, fixed, non-scrolling) ---------- */
+  main.field{
+    padding: 0 clamp(8px, 2.5vw, 22px) 10px;
+  }
+  .grid{
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bubble{
+    position:absolute;
+    border: none;
+    padding:0;
+    border-radius: 50%;
+    background: transparent no-repeat center;
+    background-image:
+      var(--prepop-bubble),
+      radial-gradient(closest-side, rgba(0,0,0,0), rgba(50,80,110,0.06) 70%, rgba(255,255,255,0) 80%);
+    background-size: 100% 100%, 100% 100%;
+    box-shadow:
+      inset 0 0 6px rgba(255,255,255,0.9),
+      2px 2px 4px rgba(255,255,255,0.6),
+      4px 4px 12px rgba(50,80,110,0.25);
+    overflow:hidden;
+    transition: transform 0.08s ease;
+  }
+
+  .bubble:hover:not(.popped){ transform: scale(1.05); }
+  .bubble:active:not(.popped){ transform: scale(0.95); }
+
+  .bubble.popped{
+    animation: pop-flatten 0.22s ease-out;
+    background-image:
+      var(--popped-bubble),
+      radial-gradient(closest-side, rgba(50,80,110,0.15), rgba(50,80,110,0.1));
+    background-size: 100% 100%, 100% 100%;
+    box-shadow:
+      inset 0 0 4px rgba(50,80,110,0.3),
+      1px 1px 2px rgba(255,255,255,0.4),
+      2px 2px 6px rgba(50,80,110,0.15);
+  }
+  @keyframes pop-flatten{
+    0%{ transform: scale(1); }
+    40%{ transform: scale(1.22); }
+    100%{ transform: scale(0.9); }
+  }
+  .bubble.respawning{ animation: pop-respawn 0.45s ease-out; }
+  @keyframes pop-respawn{
+    0%{ transform: scale(0.7); opacity:0.4; }
+    100%{ transform: scale(1); opacity:1; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .bubble, .bubble.popped, .bubble.respawning, .ask-btn, .slip-card, .slip-overlay, .notification, .kinetic-letter{
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* ---------- OVERLAY / SLIP CARD ---------- */
+  .slip-overlay{
+    position: fixed; inset:0;
+    background: rgba(20,40,60,0.45);
+    display:flex; align-items:center; justify-content:center;
+    padding: 20px;
+    z-index: 100;
+    animation: fade-in 0.15s ease-out;
+  }
+  @keyframes fade-in{ from{ opacity:0; } to{ opacity:1; } }
+
+  .slip-card{
+    width: min(440px, 100%);
+    max-height: 86vh;
+    overflow-y:auto;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 22px 22px 20px;
+    position:relative;
+    box-shadow: 0 20px 45px rgba(15,30,45,0.35);
+    animation: slip-in 0.22s cubic-bezier(.2,.9,.3,1.3);
+  }
+  @keyframes slip-in{
+    0%{ transform: translateY(24px) scale(0.96); opacity:0; }
+    100%{ transform: translateY(0) scale(1); opacity:1; }
+  }
+
+  .slip-close{
+    position:absolute; top:10px; right:12px;
+    background:none; border:none;
+    font-size:1.3rem; color: var(--ink-soft); line-height:1;
+    padding:4px;
+  }
+  .slip-close:hover{ color: var(--deepest); }
+
+  .slip-header{ margin-bottom: 10px; }
+  .slip-stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    color: var(--deepest);
+    border:2px solid var(--deepest);
+    display:inline-block;
+    padding:2px 7px;
+    border-radius:3px;
+    transform: rotate(-2deg);
+  }
+
+  .slip-thinking{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color: var(--ink-soft);
+    min-height: 1.4em;
+    margin: 14px 0;
+  }
+  .slip-thinking::after{ content:"▍"; animation: blink 0.9s steps(1) infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .slip-question{
+    font-family:'Permanent Marker', cursive;
+    font-size: 1.2rem;
+    line-height:1.35;
+    color: var(--ink);
+    margin: 6px 0 16px;
+    transform: rotate(-0.4deg);
+  }
+
+  .slip-answers-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color: var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .slip-answers{ display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .answer-row{
+    display:flex; gap:8px; align-items:baseline;
+    padding-bottom:8px;
+    border-bottom: 1px dashed var(--card-line);
+  }
+  .answer-row .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color: var(--deepest);
+    white-space:nowrap;
+  }
+  .answer-row .txt{
+    font-size:0.95rem;
+    color: var(--ink);
+  }
+  .empty-answers{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color: var(--ink-soft);
+    font-style:italic;
+  }
+
+  .slip-form{ display:flex; flex-direction:column; gap:8px; margin-top:6px; }
+  .slip-form label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    color: var(--ink-soft);
+  }
+  .slip-form textarea{
+    resize:vertical;
+    min-height:64px;
+    border: 1.5px solid var(--card-line);
+    border-radius:5px;
+    padding: 8px 10px;
+    font-family:'Inter', sans-serif;
+    font-size:0.92rem;
+    background: #fff;
+    color: var(--ink);
+    width:100%;
+  }
+  .slip-form .submit-btn{
+    align-self:flex-start;
+    background: var(--ink);
+    color: var(--card);
+    border:none;
+    border-radius: 5px;
+    padding: 9px 16px;
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:0.3px;
+  }
+  .slip-form .submit-btn:hover{ background: var(--deepest); }
+  .slip-form .submit-btn:disabled{ opacity:0.5; cursor:default; }
+
+  .toast{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color: var(--ink-soft);
+    margin-top:8px;
+  }
+
+  .ask-card h2{
+    font-family:'Permanent Marker', cursive;
+    font-size:1.25rem;
+    margin: 4px 0 4px;
+    transform: rotate(-0.6deg);
+  }
+  .ask-card p.help{
+    font-size:0.85rem;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+
+  footer.site{
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color: rgba(31,49,64,0.55);
+    padding: 4px 12px 10px;
+  }
+
+  /* ---------- NOTIFICATIONS ---------- */
+  .toast-stack{
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 300;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width: min(310px, calc(100vw - 32px));
+  }
+  .notification{
+    position:relative;
+    background: var(--card);
+    border: 1px solid var(--card-line);
+    border-radius: 8px;
+    padding: 12px 30px 12px 14px;
+    box-shadow: 0 10px 24px rgba(15,30,45,0.28);
+    animation: notif-in 0.25s ease-out;
+  }
+  @keyframes notif-in{
+    0%{ transform: translateX(30px); opacity:0; }
+    100%{ transform: translateX(0); opacity:1; }
+  }
+  .notif-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem;
+    text-transform:uppercase;
+    letter-spacing:0.8px;
+    color: var(--deepest);
+    margin-bottom:5px;
+  }
+  .notif-q{ font-size:0.83rem; color:var(--ink); font-weight:600; margin-bottom:4px; }
+  .notif-a{ font-size:0.83rem; color:var(--ink-soft); font-style:italic; }
+  .notif-close{
+    position:absolute; top:6px; right:8px;
+    background:none; border:none;
+    font-size:1.05rem; color:var(--ink-soft); line-height:1; padding:4px;
+  }
+  .notif-close:hover{ color:var(--deepest); }
+
+  @media (max-width: 480px){
+    .brand h1{ font-size:1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="brand">
+    <h1 id="titleText">Wrong Answers Only</h1>
+    <span class="stamp">100% Artificially Unintelligent</span>
+    <p class="tagline">Pop a bubble, get a real question, and leave the most confidently useless advice you can think of.</p>
+  </div>
+  <div class="header-right">
+    <span class="pop-counter" id="popCounter">Bubbles popped this visit: 0</span>
+    <button class="ask-btn" id="openAsk"><span class="plus">+</span> Ask something</button>
+  </div>
+</header>
+
+<p class="instructions">Tap any bubble to pop it &nbsp;·&nbsp; each pop reveals a question &nbsp;·&nbsp; answer it as badly as possible</p>
+
+<main class="field">
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer class="site">No bubbles were harmed. All advice is guaranteed wrong.</footer>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------------- Seed content ----------------
+  var SEED_QUESTIONS = [
+    { id:"q1", text:"How do I stop my phone battery from dying so fast?" },
+    { id:"q2", text:"What's the secret to a happy relationship?" },
+    { id:"q3", text:"How can I fall asleep faster?" },
+    { id:"q4", text:"My houseplant is dying. What do I do?" },
+    { id:"q5", text:"How do I become more productive at work?" },
+    { id:"q6", text:"What should I cook for dinner tonight?" },
+    { id:"q7", text:"How do I get better at public speaking?" },
+    { id:"q8", text:"How do I save more money?" }
+  ];
+  var SEED_ANSWERS = {
+    q1: ["Charge it with optimism.", "Throw it in a river — problem solved either way."],
+    q2: ["Never learn each other's names, keeps things mysterious.", "Argue about whose turn it is to argue."],
+    q3: ["Stare directly at the sun for 8 hours, you'll pass out eventually.", "Count backwards from infinity."],
+    q4: ["Read it your taxes out loud, plants love drama.", "Replace it with a rock and lower your expectations."],
+    q5: ["Reply to every email with just a period.", "Take an interpretive dance break every 4 minutes."],
+    q6: ["Cereal, but serve it in a wine glass for elegance.", "Whatever's closest to the floor."],
+    q7: ["Speak only in questions? Really drives the point home?", "Practice by yelling into a pillow, then never do that in public."],
+    q8: ["Convert all savings into novelty rubber ducks; ducks appreciate over time.", "Just stop checking your bank account. Ignorance is wealth."]
+  };
+  var THINKING_LINES = [
+    "PULLING YOUR FILE...",
+    "SEARCHING FOR THE WORST TAKE...",
+    "CONSULTING THE ARCHIVE OF BAD IDEAS...",
+    "CROSS-REFERENCING NONSENSE...",
+    "STAMPING IT OFFICIAL...",
+    "DONE. BRACE YOURSELF..."
+  ];
+
+  // ---------------- State ----------------
+  var state = {
+    questions: [],
+    popCount: 0,
+    lastQuestionId: null
+  };
+
+  var grid = document.getElementById("grid");
+  var popCounterEl = document.getElementById("popCounter");
+  var openAskBtn = document.getElementById("openAsk");
+  var headerEl = document.querySelector("header.site");
+  var instructionsEl = document.querySelector(".instructions");
+  var footerEl = document.querySelector("footer.site");
+  var toastStack = document.getElementById("toastStack");
+
+  var BUBBLE_STEP = 58;   // center-to-center horizontal spacing
+  var BUBBLE_GAP = 6;     // visual gap between bubbles
+  var resizeTimer = null;
+  var POLL_MS = 8000;
+
+  // ============================================================
+  // SUPABASE CONFIG — replace these two values with your own
+  // project's URL and Publishable key (Project Settings > API).
+  //
+  // Use the PUBLISHABLE key (starts with sb_publishable_...) —
+  // NOT the Secret key (sb_secret_...). The secret key bypasses
+  // Row Level Security entirely and must never go in browser code.
+  //
+  // Until you fill these in, the site still works, but only in
+  // local/demo mode: nothing is shared between visitors.
+  // ============================================================
+  var SUPABASE_URL = "https://qmarjrpeqdpqadfnhtav.supabase.co";
+  var SUPABASE_PUBLISHABLE_KEY = "sb_publishable_RjNBZTEnYQsNVb_lAFAT3w_LsAc1O7s";
+
+  function supabaseConfigured(){
+    return SUPABASE_URL.indexOf("YOUR-PROJECT") === -1 &&
+      SUPABASE_PUBLISHABLE_KEY.indexOf("YOUR-PUBLISHABLE") === -1;
+  }
+
+  async function sb(path, opts){
+    opts = opts || {};
+    var headers = {
+      "apikey": SUPABASE_PUBLISHABLE_KEY,
+      "Authorization": "Bearer " + SUPABASE_PUBLISHABLE_KEY,
+      "Content-Type": "application/json"
+    };
+    if (opts.prefer) headers["Prefer"] = opts.prefer;
+    var res = await fetch(SUPABASE_URL + "/rest/v1/" + path, {
+      method: opts.method || "GET",
+      headers: headers,
+      body: opts.body ? JSON.stringify(opts.body) : undefined
+    });
+    if (!res.ok){
+      throw new Error("Supabase request failed: " + res.status);
+    }
+    if (res.status === 204) return null;
+    var text = await res.text();
+    return text ? JSON.parse(text) : null;
+  }
+
+  // ---------------- Shared data: questions & answers ----------------
+  async function loadQuestions(){
+    if (!supabaseConfigured()) return null;
+    try{
+      return await sb("questions?select=id,text&order=created_at.asc");
+    }catch(e){
+      console.error("Could not load questions from Supabase:", e);
+      return null;
+    }
+  }
+
+  async function getAnswers(qid){
+    if (!supabaseConfigured()){
+      return (SEED_ANSWERS[qid] || []).map(function(t){ return {text:t}; });
+    }
+    try{
+      return await sb(
+        "answers?question_id=eq." + encodeURIComponent(qid) +
+        "&select=text,created_at&order=created_at.desc"
+      );
+    }catch(e){
+      console.error("Could not load answers from Supabase:", e);
+      return [];
+    }
+  }
+
+  async function addAnswer(qid, text){
+    if (supabaseConfigured()){
+      try{
+        await sb("answers", {
+          method: "POST",
+          prefer: "return=minimal",
+          body: { question_id: qid, text: text }
+        });
+      }catch(e){
+        console.error("Could not save answer to Supabase:", e);
+      }
+    }
+    var list = await getAnswers(qid);
+    markMyQuestionSeen(qid, list.length);
+    return list;
+  }
+
+  async function addQuestion(text){
+    var id = "q" + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+    var askerId = getAskerId();
+    if (supabaseConfigured()){
+      try{
+        await sb("questions", {
+          method: "POST",
+          prefer: "return=minimal",
+          body: { id: id, text: text, asker_id: askerId }
+        });
+      }catch(e){
+        console.error("Could not save question to Supabase:", e);
+      }
+    }
+    var q = { id: id, text: text };
+    state.questions = state.questions.concat([q]);
+    rememberMyQuestion(id, text);
+    return q;
+  }
+
+  async function initQuestions(){
+    var loaded = await loadQuestions();
+    if (loaded && loaded.length){
+      state.questions = loaded;
+    } else {
+      state.questions = SEED_QUESTIONS.slice();
+      if (!supabaseConfigured()){
+        console.warn(
+          "Wrong Answers Only: Supabase isn't configured yet, so questions " +
+          "and answers won't be shared between visitors. Fill in SUPABASE_URL " +
+          "and SUPABASE_PUBLISHABLE_KEY at the top of the script to connect a backend."
+        );
+      }
+    }
+  }
+
+  // ---------------- Personal data: "questions I asked" ----------------
+  // Kept in this browser's own localStorage — this is a real deployed
+  // site (not a Claude artifact), so that's the normal, correct place
+  // for a per-visitor identity that doesn't require an account.
+  function getAskerId(){
+    try{
+      var id = localStorage.getItem("waq-asker-id");
+      if (!id){
+        id = "u" + Date.now().toString(36) + Math.random().toString(36).slice(2,8);
+        localStorage.setItem("waq-asker-id", id);
+      }
+      return id;
+    }catch(e){
+      return "anon";
+    }
+  }
+
+  function getMyQuestions(){
+    try{
+      return JSON.parse(localStorage.getItem("waq-my-questions") || "[]");
+    }catch(e){
+      return [];
+    }
+  }
+
+  function saveMyQuestionsLocal(list){
+    try{
+      localStorage.setItem("waq-my-questions", JSON.stringify(list));
+    }catch(e){ /* non-fatal */ }
+  }
+
+  function rememberMyQuestion(id, text){
+    var mine = getMyQuestions();
+    mine.push({ id: id, text: text, lastSeen: 0 });
+    saveMyQuestionsLocal(mine);
+  }
+
+  function markMyQuestionSeen(qid, count){
+    var mine = getMyQuestions();
+    var changed = false;
+    mine.forEach(function(entry){
+      if (entry.id === qid){ entry.lastSeen = count; changed = true; }
+    });
+    if (changed) saveMyQuestionsLocal(mine);
+  }
+
+  async function checkForNewAnswers(){
+    if (!supabaseConfigured()) return;
+    var mine = getMyQuestions();
+    if (!mine.length) return;
+    var changed = false;
+    for (var i = 0; i < mine.length; i++){
+      var entry = mine[i];
+      var fresh = await getAnswers(entry.id);
+      if (fresh.length > entry.lastSeen){
+        var newOnes = fresh.slice(entry.lastSeen);
+        newOnes.forEach(function(a){
+          showNotification(entry.text, a.text);
+        });
+        entry.lastSeen = fresh.length;
+        changed = true;
+      }
+    }
+    if (changed) saveMyQuestionsLocal(mine);
+  }
+
+  function showNotification(questionText, answerText){
+    var div = document.createElement("div");
+    div.className = "notification";
+    div.innerHTML =
+      '<button class="notif-close" aria-label="Dismiss">×</button>' +
+      '<div class="notif-title">Someone answered your question</div>' +
+      '<div class="notif-q"></div>' +
+      '<div class="notif-a"></div>';
+    div.querySelector(".notif-q").textContent = questionText;
+    div.querySelector(".notif-a").textContent = "\u201C" + answerText + "\u201D";
+    toastStack.appendChild(div);
+    div.querySelector(".notif-close").addEventListener("click", function(){ div.remove(); });
+    setTimeout(function(){ if (div.parentElement) div.remove(); }, 9000);
+  }
+
+  // ---------------- Sound ----------------
+  var audioCtx = null;
+  function getAudioCtx(){
+    if (!audioCtx){
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) audioCtx = new AC();
+    }
+    if (audioCtx && audioCtx.state === "suspended") audioCtx.resume();
+    return audioCtx;
+  }
+
+  function playPop(){
+    var ctx = getAudioCtx();
+    if (!ctx) return;
+    var t0 = ctx.currentTime;
+
+    var osc = ctx.createOscillator();
+    osc.type = "sine";
+    var startFreq = 700 + Math.random() * 400;
+    osc.frequency.setValueAtTime(startFreq, t0);
+    osc.frequency.exponentialRampToValueAtTime(70, t0 + 0.09);
+    var oscGain = ctx.createGain();
+    oscGain.gain.setValueAtTime(0.55, t0);
+    oscGain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.1);
+    osc.connect(oscGain).connect(ctx.destination);
+    osc.start(t0);
+    osc.stop(t0 + 0.12);
+
+    var bufferSize = Math.floor(ctx.sampleRate * 0.05);
+    var buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    var data = buffer.getChannelData(0);
+    for (var i = 0; i < bufferSize; i++){
+      data[i] = (Math.random() * 2 - 1) * (1 - i / bufferSize);
+    }
+    var noise = ctx.createBufferSource();
+    noise.buffer = buffer;
+    var filter = ctx.createBiquadFilter();
+    filter.type = "bandpass";
+    filter.frequency.value = 1000 + Math.random() * 900;
+    filter.Q.value = 1.2;
+    var noiseGain = ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.5, t0);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.05);
+    noise.connect(filter).connect(noiseGain).connect(ctx.destination);
+    noise.start(t0);
+  }
+
+  // ---------------- Honeycomb bubble grid (fills the screen once, no growth) ----------------
+  function buildGrid(){
+    grid.innerHTML = "";
+
+    var availableHeight = window.innerHeight
+      - headerEl.offsetHeight
+      - instructionsEl.offsetHeight
+      - footerEl.offsetHeight
+      - 16;
+    availableHeight = Math.max(availableHeight, BUBBLE_STEP * 2);
+
+    var availableWidth = grid.parentElement.clientWidth;
+
+    var diameter = BUBBLE_STEP - BUBBLE_GAP;
+    var vStep = BUBBLE_STEP * 0.87; // hexagonal row spacing
+
+    grid.style.width = availableWidth + "px";
+    grid.style.height = availableHeight + "px";
+
+    // Only ever place *complete* circles - never one that would be sliced
+    // off by the edge of the screen. Even rows start flush left; odd rows
+    // are shifted right by half a step to create the honeycomb offset, so
+    // they naturally fit one fewer full bubble.
+    var colsEven = Math.floor((availableWidth - diameter) / BUBBLE_STEP) + 1;
+    var colsOdd = Math.floor((availableWidth - BUBBLE_STEP / 2 - diameter) / BUBBLE_STEP) + 1;
+    colsEven = Math.max(colsEven, 1);
+    colsOdd = Math.max(colsOdd, 0);
+    var rows = Math.floor((availableHeight - diameter) / vStep) + 1;
+    rows = Math.max(rows, 1);
+
+    // Center the whole honeycomb so leftover space is spread evenly on
+    // all sides instead of collecting at the right/bottom edge.
+    var contentWidth = (colsEven - 1) * BUBBLE_STEP + diameter;
+    var contentHeight = (rows - 1) * vStep + diameter;
+    var shiftX = Math.max(0, (availableWidth - contentWidth) / 2);
+    var shiftY = Math.max(0, (availableHeight - contentHeight) / 2);
+
+    var frag = document.createDocumentFragment();
+    for (var r = 0; r < rows; r++){
+      var isOdd = (r % 2 === 1);
+      var rowOffset = isOdd ? BUBBLE_STEP / 2 : 0;
+      var colsForRow = isOdd ? colsOdd : colsEven;
+      for (var c = 0; c < colsForRow; c++){
+        var x = shiftX + c * BUBBLE_STEP + rowOffset;
+        var y = shiftY + r * vStep;
+
+        var btn = document.createElement("button");
+        btn.className = "bubble";
+        btn.type = "button";
+        btn.setAttribute("aria-label", "Pop bubble");
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
+        btn.style.width = diameter + "px";
+        btn.style.height = diameter + "px";
+        btn.addEventListener("click", onBubbleClick);
+        frag.appendChild(btn);
+      }
+    }
+    grid.appendChild(frag);
+  }
+
+  function onBubbleClick(e){
+    var btn = e.currentTarget;
+    if (btn.classList.contains("popped")) return;
+    btn.classList.add("popped");
+    playPop();
+    state.popCount++;
+    popCounterEl.textContent = "Bubbles popped this visit: " + state.popCount;
+
+    openQuestionCard();
+
+    setTimeout(function(){
+      btn.classList.remove("popped");
+      btn.classList.add("respawning");
+      setTimeout(function(){ btn.classList.remove("respawning"); }, 500);
+    }, 900);
+  }
+
+  function pickQuestion(){
+    if (!state.questions.length) return null;
+    if (state.questions.length === 1) return state.questions[0];
+    var q;
+    do {
+      q = state.questions[Math.floor(Math.random() * state.questions.length)];
+    } while (q.id === state.lastQuestionId);
+    state.lastQuestionId = q.id;
+    return q;
+  }
+
+  // ---------------- Question / answer overlay ----------------
+  function openQuestionCard(){
+    var q = pickQuestion();
+    if (!q) return;
+
+    var overlay = document.createElement("div");
+    overlay.className = "slip-overlay";
+    overlay.innerHTML =
+      '<div class="slip-card" role="dialog" aria-modal="true" aria-label="Question card">' +
+        '<button class="slip-close" aria-label="Close">×</button>' +
+        '<div class="slip-header"><span class="slip-stamp">Official nonsense file</span></div>' +
+        '<div class="slip-thinking"></div>' +
+        '<div class="slip-question" hidden></div>' +
+        '<div class="slip-answers-label" hidden>Genius solutions on file</div>' +
+        '<div class="slip-answers" hidden></div>' +
+        '<div class="slip-form" hidden>' +
+          '<label for="answerInput">Your turn to be unhelpful</label>' +
+          '<textarea id="answerInput" maxlength="220" placeholder="Confidently wrong answer..."></textarea>' +
+          '<button type="button" class="submit-btn">Submit bad advice</button>' +
+          '<span class="toast" aria-live="polite"></span>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var thinkingEl = overlay.querySelector(".slip-thinking");
+    var questionEl = overlay.querySelector(".slip-question");
+    var answersLabelEl = overlay.querySelector(".slip-answers-label");
+    var answersEl = overlay.querySelector(".slip-answers");
+    var formEl = overlay.querySelector(".slip-form");
+    var closeBtn = overlay.querySelector(".slip-close");
+
+    function close(){
+      overlay.remove();
+      document.removeEventListener("keydown", onKey);
+    }
+    function onKey(ev){ if (ev.key === "Escape") close(); }
+    document.addEventListener("keydown", onKey);
+    closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", function(ev){ if (ev.target === overlay) close(); });
+
+    var idx = 0;
+    thinkingEl.textContent = THINKING_LINES[0];
+    var thinkTimer = setInterval(function(){
+      idx++;
+      if (idx < THINKING_LINES.length){
+        thinkingEl.textContent = THINKING_LINES[idx];
+      }
+    }, 220);
+
+    setTimeout(async function(){
+      clearInterval(thinkTimer);
+      thinkingEl.remove();
+      questionEl.hidden = false;
+      questionEl.textContent = q.text;
+      answersLabelEl.hidden = false;
+      answersEl.hidden = false;
+      formEl.hidden = false;
+
+      renderAnswers(answersEl, await getAnswers(q.id));
+
+      var submitBtn = formEl.querySelector(".submit-btn");
+      var textarea = formEl.querySelector("textarea");
+      var toast = formEl.querySelector(".toast");
+
+      async function submitAnswer(){
+        var text = textarea.value.trim();
+        if (!text) return;
+        submitBtn.disabled = true;
+        var updated = await addAnswer(q.id, text);
+        renderAnswers(answersEl, updated);
+        textarea.value = "";
+        toast.textContent = "Filed. Somewhere, an expert weeps.";
+        submitBtn.disabled = false;
+      }
+
+      submitBtn.addEventListener("click", submitAnswer);
+      textarea.addEventListener("keydown", function(ev){
+        if (ev.key === "Enter" && (ev.metaKey || ev.ctrlKey)){
+          ev.preventDefault();
+          submitAnswer();
+        }
+      });
+    }, THINKING_LINES.length * 220 + 150);
+  }
+
+  function renderAnswers(container, list){
+    container.innerHTML = "";
+    if (!list || !list.length){
+      var empty = document.createElement("div");
+      empty.className = "empty-answers";
+      empty.textContent = "No genius has answered yet. Be the first fool.";
+      container.appendChild(empty);
+      return;
+    }
+    list.forEach(function(a, i){
+      var row = document.createElement("div");
+      row.className = "answer-row";
+      var num = document.createElement("span");
+      num.className = "num";
+      num.textContent = "#" + (i + 1);
+      var txt = document.createElement("span");
+      txt.className = "txt";
+      txt.textContent = a.text;
+      row.appendChild(num);
+      row.appendChild(txt);
+      container.appendChild(row);
+    });
+  }
+
+  // ---------------- Add question modal ----------------
+  function openAskModal(){
+    var overlay = document.createElement("div");
+    overlay.className = "slip-overlay";
+    overlay.innerHTML =
+      '<div class="slip-card ask-card" role="dialog" aria-modal="true" aria-label="Ask a question">' +
+        '<button class="slip-close" aria-label="Close">×</button>' +
+        '<div class="slip-header"><span class="slip-stamp">New intake form</span></div>' +
+        '<h2>What do you need terrible advice on?</h2>' +
+        '<p class="help">Type a real question. Strangers will pop a bubble and answer it as badly as possible. You\u2019ll get a pop-up here if someone answers.</p>' +
+        '<div class="slip-form">' +
+          '<label for="questionInput">Your question</label>' +
+          '<textarea id="questionInput" maxlength="180" placeholder="e.g. How do I get my cat off the counter?"></textarea>' +
+          '<button type="button" class="submit-btn">Submit question</button>' +
+          '<span class="toast" aria-live="polite"></span>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var formEl = overlay.querySelector(".slip-form");
+    var closeBtn = overlay.querySelector(".slip-close");
+    var submitBtn = formEl.querySelector(".submit-btn");
+    var textarea = formEl.querySelector("textarea");
+    var toast = formEl.querySelector(".toast");
+
+    function close(){
+      overlay.remove();
+      document.removeEventListener("keydown", onKey);
+    }
+    function onKey(ev){ if (ev.key === "Escape") close(); }
+    document.addEventListener("keydown", onKey);
+    closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", function(ev){ if (ev.target === overlay) close(); });
+
+    async function submitQuestion(){
+      var text = textarea.value.trim();
+      if (!text) return;
+      submitBtn.disabled = true;
+      await addQuestion(text);
+      toast.textContent = "Question added to the wrap. Go pop a bubble.";
+      textarea.value = "";
+      submitBtn.disabled = false;
+      setTimeout(close, 900);
+    }
+
+    submitBtn.addEventListener("click", submitQuestion);
+    textarea.addEventListener("keydown", function(ev){
+      if (ev.key === "Enter" && (ev.metaKey || ev.ctrlKey)){
+        ev.preventDefault();
+        submitQuestion();
+      }
+    });
+    textarea.focus();
+  }
+
+  openAskBtn.addEventListener("click", openAskModal);
+
+  window.addEventListener("resize", function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(buildGrid, 200);
+  });
+
+  // ---------------- Kinetic type: letters stretch near the cursor ----------------
+  function setupKineticTitle(){
+    var titleEl = document.getElementById("titleText");
+    var text = titleEl.textContent;
+    titleEl.innerHTML = "";
+    var letters = [];
+    text.split("").forEach(function(ch){
+      var span = document.createElement("span");
+      span.className = "kinetic-letter";
+      span.textContent = (ch === " ") ? "\u00A0" : ch;
+      titleEl.appendChild(span);
+      letters.push(span);
+    });
+
+    var raf = null;
+    var lastX = null, lastY = null;
+
+    function update(){
+      raf = null;
+      if (lastX === null) return;
+      var radius = 85;
+      letters.forEach(function(letter){
+        var rect = letter.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        var dx = lastX - cx;
+        var dy = lastY - cy;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        var strength = Math.max(0, 1 - dist / radius);
+        if (strength <= 0){
+          letter.style.transform = "";
+          return;
+        }
+        var stretch = 1 + strength * 0.85;
+        var skew = (dx / radius) * strength * 10;
+        var lift = -strength * 8;
+        letter.style.transform =
+          "translateY(" + lift + "px) scaleY(" + stretch.toFixed(2) + ") skewX(" + skew.toFixed(1) + "deg)";
+      });
+    }
+
+    headerEl.addEventListener("mousemove", function(e){
+      lastX = e.clientX;
+      lastY = e.clientY;
+      if (!raf) raf = requestAnimationFrame(update);
+    });
+    headerEl.addEventListener("mouseleave", function(){
+      lastX = null; lastY = null;
+      letters.forEach(function(letter){ letter.style.transform = ""; });
+    });
+  }
+
+  // ---------------- Init ----------------
+  (async function init(){
+    setupKineticTitle();
+    await initQuestions();
+    buildGrid();
+    setTimeout(checkForNewAnswers, 1500);
+    setInterval(checkForNewAnswers, POLL_MS);
+  })();
+
+})();
+</script>
+</body>
+</html>
